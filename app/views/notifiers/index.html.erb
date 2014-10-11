@@ -1,0 +1,24 @@
+<%= page_header %>
+
+<%= link_to t('.new'), nil, id: 'new-notifier-form-toggler', class: 'btn btn-primary' %>
+
+<div id='new-notifier-form-container' class='container'>
+  <div class='row'>
+    <%= render 'form' %>
+  </div>
+</div>
+
+
+<table id='notifiers-table' class='table table-striped'>
+  <thead>
+    <th> <%= t '.path' %> </th>
+    <th> <%= t '.pattern' %> </th>
+    <th> <%= t '.events.count' %> </th>
+
+    <th> <%= t 'common.options' %> </th>
+  </thead>
+
+  <tbody id='notifiers'>
+    <%= render @notifiers %>
+  </tbody>
+</table>

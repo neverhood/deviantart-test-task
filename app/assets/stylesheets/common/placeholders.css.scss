@@ -1,0 +1,38 @@
+%non-decorated {
+    text-decoration: none;
+
+    &:visited {
+        text-decoration: none;
+    }
+}
+
+%user-input-entries {
+    div.author {
+        a { @extend %non-decorated; }
+
+        width: 104px;
+        height: 120px;
+        margin-bottom: 15px;
+
+        div.author-avatar {
+        }
+
+        div.author-name {
+            margin-top: 5px;
+
+            text-align: center;
+            line-height: 20px;
+            font-size: 13px;
+
+            text-decoration: none;
+        }
+    }
+
+    div.content {
+        margin: 0 0 0 120px;
+    }
+
+    div.options {
+        margin: 0 0 0 120px;
+    }
+}

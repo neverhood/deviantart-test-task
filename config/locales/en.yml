@@ -1,0 +1,56 @@
+en:
+###########
+# Flashes #
+###########
+  flash:
+    notifiers:
+      update:
+        notice: 'Notifier succesfully updated'
+
+#####################
+# Application views #
+#####################
+  application:
+    header:
+      brand: 'DeviantArt Dir Watcher'
+
+#######################
+# Common translations #
+#######################
+  common:
+    please_wait: 'Please wait..'
+    are_you_sure?: 'Are you sure?'
+    submit: 'Submit'
+    options: 'Options'
+    destroy: 'Destroy'
+    edit:    'Edit'
+
+################
+# ActiveRecord #
+################
+  activerecord:
+    models:
+      attributes:
+        notifier: &notifier_attributes
+          path: 'Path (absolute)'
+          pattern: 'Match Pattern'
+          events:
+            count: 'Events Count'
+    errors:
+      models:
+        notifier:
+          attributes:
+            path:
+              not_a_directory: 'is not a directory'
+
+###########################
+# Controller translations #
+###########################
+  notifiers:
+    index:
+      header: 'Notifiers'
+      new: 'Add new Notifier'
+      <<: *notifier_attributes
+    edit:
+      header: 'Edit notifier: %{notifier}'
+

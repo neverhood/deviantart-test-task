@@ -1,0 +1,14 @@
+// Place all the styles related to the notifiers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+//
+
+body#notifiers {
+    div#new-notifier-form-container {
+        display: none;
+    }
+
+    table#notifiers-table {
+        margin-top: 25px;
+    }
+}

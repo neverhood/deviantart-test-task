@@ -1,0 +1,18 @@
+<tr id='notifier-<%= notifier.id %>'>
+  <td>
+    <%= notifier.path %>
+  </td>
+
+  <td>
+    <%= notifier.pattern %>
+  </td>
+
+  <td>
+    0
+  </td>
+
+  <td>
+    <%= link_to t('common.destroy'), notifier, method: 'delete', class: 'label label-danger destroy-notifier', remote: true, data: { confirm: t('common.are_you_sure?') } %>
+    <%= link_to t('common.edit'), edit_notifier_path(notifier), class: 'label label-info'  %>
+  </td>
+</tr>

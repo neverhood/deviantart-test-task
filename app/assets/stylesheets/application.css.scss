@@ -1,0 +1,173 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+*/
+
+@import 'yeti.variables';
+@import 'bootstrap';
+@import 'autocomplete';
+
+// Application styles
+@import 'common/mixins';
+@import 'common/classes';
+@import 'common/placeholders';
+
+// Controller styles
+@import 'notifiers';
+
+#header {
+    div.navbar-inner {
+        border-radius: 0;
+    }
+
+
+    margin-bottom: 0;
+}
+
+div#main-content {
+    padding: 15px;
+}
+
+/* FOOTER */
+html,body {
+    height: 100%;
+}
+
+div#wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    /*margin: 0 auto -100px;*/
+}
+
+div#push, div#footer {
+    height: 100px;
+}
+
+div#footer {
+    /*@include gradient-vertical($navbarInverseBackgroundHighlight, $navbarInverseBackground);*/
+
+    .container .message {
+        margin: 20px 0;
+    }
+}
+
+@media (max-width: 767px) {
+    div#footer {
+        margin-left: -20px;
+        margin-right: -20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+/* FOOTER END */
+
+/* Notifications */
+div#notifications {
+    z-index: 1;
+    margin-top: 15px;
+
+    position: fixed;
+    left: 75%;
+
+    h4 {
+        margin: 10px 0;
+    }
+
+    div.notification {
+        font-size: 12px;
+        background: rgba(0, 0, 0, 0.6);
+        border: none;
+        color: white;
+        text-shadow: none;
+    }
+}
+/* Notifications END */
+
+div#back-to-top {
+    display: none; /* being shown with js */
+    position: fixed;
+    width: 10%;
+    height: 100%;
+
+    text-align: center;
+
+    cursor: pointer;
+    background-color: rgba(0, 140, 228, 0.1);
+
+    &:hover {
+        background-color: rgba(0, 140, 228, 0.2);
+    }
+
+    i {
+        display: inline-block;
+        margin-top: 50px;
+
+        font-size: 25px;
+    }
+}
+
+/* Common */
+
+i.inline-spinner {
+    color: $link-color;
+    font-size: 20px;
+
+    margin: 0 5px;
+}
+
+input.boolean.form-control {
+    display: inline;
+    width: auto;
+    height: auto;
+}
+
+.jcrop-keymgr {
+    display: none;
+}
+
+span.inline-heads-up {
+    span.label {
+        padding: 6px;
+    }
+
+    strong {
+        display: inline-block;
+        margin-left: 5px;
+    }
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a i {
+    margin: 0 5px;
+}
+
+/* Common END */
+ul#user-details-edit-nav {
+    margin-bottom: 15px;
+}
+
+.form-group.error {
+    label.control-label {
+        color: $state-danger-text;
+    }
+
+    input.form-control {
+        border-color: $state-danger-text;
+    }
+
+    span.help-inline {
+        color: $state-danger-text;
+    }
+}

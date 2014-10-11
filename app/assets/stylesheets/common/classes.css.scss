@@ -1,0 +1,32 @@
+.hidden { display: none; }
+
+.invisible { visibility: hidden; }
+
+.inline { display: inline; }
+
+.absolute { position: absolute; }
+
+hr.clear-separator, hr.clear {
+    clear: both;
+}
+
+hr.small {
+    width: 5px;
+}
+
+div.errors-container span {
+    display: block;
+}
+
+div.heads-up {
+    @extend .alert;
+    @extend .alert-info;
+}
+
+.padded-15px {
+    padding: 15px;
+}
+
+.clear-both {
+    clear: both;
+}

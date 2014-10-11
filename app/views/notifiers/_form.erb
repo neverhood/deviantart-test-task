@@ -1,0 +1,10 @@
+<%= simple_form_for @notifier, remote: !@notifier.persisted?, html: { id: 'notifier-form', class: 'form form-horizontal' } do |form| %>
+  <%= form.input :path %>
+  <%= form.input :pattern %>
+
+  <div class='form-group'>
+    <div class='col-lg-offset-2 col-sm-10'>
+      <%= form.submit t('common.submit'), class: 'btn btn-success', data: { disable_with: t('common.please_wait') } %>
+    </div>
+  </div>
+<% end %>
