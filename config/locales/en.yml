@@ -53,4 +53,6 @@ en:
       <<: *notifier_attributes
     edit:
       header: 'Edit notifier: %{notifier}'
+    show:
+      header: 'Notifier: %{notifier}'
 

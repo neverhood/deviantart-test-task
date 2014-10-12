@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 # Background processing
 gem 'sidekiq'
+gem 'sinatra', '>= 1.3.0', require: nil
 
 # Debug/repl
 gem 'pry-rails'
