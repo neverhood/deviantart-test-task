@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141010191147) do
+ActiveRecord::Schema.define(version: 20141012091334) do
+
+  create_table "events", force: true do |t|
+    t.integer  "notifier_id"
+    t.string   "file_name"
+    t.time     "file_ctime"
+    t.string   "absolute_file_path"
+    t.string   "ownership"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "events", ["notifier_id", "file_name"], name: "index_events_on_notifier_id_and_file_name", unique: true
 
   create_table "notifiers", force: true do |t|
     t.string   "path",       default: "", null: false

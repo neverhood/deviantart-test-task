@@ -18,6 +18,7 @@ en:
 # Common translations #
 #######################
   common:
+    x: '×'
     please_wait: 'Please wait..'
     are_you_sure?: 'Are you sure?'
     submit: 'Submit'

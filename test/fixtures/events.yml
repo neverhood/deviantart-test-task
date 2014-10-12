@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  notifier_id: 1
+  file_name: MyString
+  file_ctime: 2014-10-12 12:13:34
+  absolute_file_path: MyString
+
+two:
+  notifier_id: 1
+  file_name: MyString
+  file_ctime: 2014-10-12 12:13:34
+  absolute_file_path: MyString

@@ -1,5 +1,5 @@
 class NotifiersController < ApplicationController
-  before_filter :find_notifier!, only: [ :edit, :show, :destroy, :update ]
+  before_filter :find_notifier!, only: [ :show, :destroy ]
 
   def index
     respond_to do |format|
@@ -24,17 +24,6 @@ class NotifiersController < ApplicationController
     else
       render json: { errors: @notifier.errors }, status: 422
     end
-  end
-
-  def update
-    if @notifier.update(notifier_params)
-      redirect_to root_path, notice: I18n.t('flash.notifiers.update.notice')
-    else
-      render :edit
-    end
-  end
-
-  def edit
   end
 
   def show

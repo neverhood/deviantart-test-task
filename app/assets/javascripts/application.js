@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require jquery-ui/autocomplete
+//= require bootstrap
 //
 //= require api/api
 //
