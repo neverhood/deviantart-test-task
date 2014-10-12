@@ -27,6 +27,12 @@ class Notifier < ActiveRecord::Base
   before_validation -> { path.gsub!(/\/+$/, '') if path.end_with?('/') }
   after_create      -> { NotifierWorker.perform_async(id) }
 
+  class << self
+    def newfiles_logger
+      @newfiles_logger ||= Logger.new("/var/log/newfiles.log")
+    end
+  end
+
   def start!
     @watcher  = INotify::Notifier.new
 
@@ -41,6 +47,7 @@ class Notifier < ActiveRecord::Base
         if Notifier.where(id: id).any?
           if event.name =~ Regexp.new(pattern)
             events.create(file_name: event.name, absolute_file_path: file.path, file_mtime: file.mtime, ownership: "uid: #{stat.uid}, gid: #{stat.gid}")
+            self.class.newfiles_logger.info "New file created under #{path}: #{event.name}"
           end
         else
           @watcher.stop
