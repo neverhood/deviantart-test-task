@@ -1,16 +1,8 @@
 <tr id='notifier-<%= notifier.id %>'>
-  <td>
-    <%= link_to notifier.path, notifier %>
-  </td>
-
-  <td>
-    <%= notifier.pattern %>
-  </td>
-
-  <td>
-    0
-  </td>
-
+  <td> <%= notifier.id %> </td>
+  <td> <%= link_to notifier.path, notifier %> </td>
+  <td> <%= notifier.pattern %> </td>
+  <td> <%= notifier.events.count %> </td>
   <td>
     <%= link_to t('common.destroy'), notifier, method: 'delete', class: 'label label-danger destroy-notifier', remote: true, data: { confirm: t('common.are_you_sure?') } %>
   </td>

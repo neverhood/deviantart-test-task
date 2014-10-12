@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
 
   get '/streams/watcher_updates' => 'streams#watcher_updates'
+  get ':notifier_id/:seconds' => 'notifiers#history'
 
   # Background processing frontend
   mount Sidekiq::Web => '/sidekiq'

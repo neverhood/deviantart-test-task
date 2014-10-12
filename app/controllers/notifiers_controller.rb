@@ -29,6 +29,20 @@ class NotifiersController < ApplicationController
   def show
   end
 
+  def history
+    @notifier = Notifier.find(params[:notifier_id])
+    seconds   = params[:seconds].to_i
+
+    events = @notifier.events.where(['file_mtime > ?', seconds.ago])
+
+    if events.count > 0
+      render json: { files: events.map { |event| event.absolute_file_path },
+                     median_length: (events.inject(0) { |sum, event| sum + event.file_name.length })/events.count }
+    else
+      render json: { error: "No events found for notifier #{@notifier.id} for last #{seconds} seconds}", status: 422 }
+    end
+  end
+
   def destroy
     @notifier.destroy
 
