@@ -7,6 +7,17 @@ By going to a notifier page you can watch live updates on that directory.
 
 Once a notifier is destroyed, app stops watching it's directory
 
+   For example, if one file "/home/_foobar" is created, a request
+   to this URL (within the next 5 seconds):
+
+        http://localhost:8888/<notifier_id>/<seconds_ago>
+
+   will return the answer encoded as a JSON object:
+
+        {"files": ["/home/_foobar"],
+         "median_length": 7}
+
+
 * System dependencies:
   - ruby
   - nodejs
