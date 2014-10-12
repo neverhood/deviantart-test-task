@@ -1,6 +1,6 @@
 <%= page_header t('.header', notifier: @notifier.path) %>
 
-<table class='table table-condensed table-striped table-hover'>
+<table id='events-table' class='table table-condensed table-striped table-hover' data-notifier-id='<%= @notifier.id %>'>
   <thead>
     <th> <%= t '.event.file_name' %> </th>
     <th> <%= t '.event.file_mtime' %> </th>
@@ -8,7 +8,7 @@
     <th> <%= t '.event.file_ownership' %> </th>
   </thead>
 
-  <tbody>
+  <tbody id='events'>
     <%= render @notifier.events %>
   </tbody>
 </table>

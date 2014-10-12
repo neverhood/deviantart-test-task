@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     post :stop,  :on => :member
   end
 
+  get '/streams/watcher_updates' => 'streams#watcher_updates'
+
   # Background processing frontend
   mount Sidekiq::Web => '/sidekiq'
 end
