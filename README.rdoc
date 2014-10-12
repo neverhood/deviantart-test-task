@@ -1,28 +1,24 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app sets/removes watchers for specified directories (uses `inotify` so will only work on linux)
 
-Things you may want to cover:
+Once a new notifier is created (path/match pattern) app starts watching the specified path.
+By going to a notifier page you can watch live updates on that directory.
 
-* Ruby version
+Once a notifier is destroyed, app stops watching it's directory
 
-* System dependencies
+* System dependencies:
+  - ruby
+  - nodejs
+  - redis
 
-* Configuration
+* Deployment instructions:
+  - <tt>git clone https://github.com/neverhood/deviantart-test-task</tt>
+  - <tt>cd deviantart-test-task</tt>
+  - <tt>bundle</tt>
+  - <tt>RAILS_ENV=production rake db:create</tt>
+  - <tt>RAILS_ENV=production rake db:migrate</tt>
+  - <tt>sidekiq</tt>
+  - <tt>rake assets:precompile</tt>
+  - <tt>RAILS_ENV=production rails s -p 8888</tt>
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
