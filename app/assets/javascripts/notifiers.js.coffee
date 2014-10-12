@@ -60,19 +60,17 @@ $.api.notifiers = api =
                 $(this).parents('tr').remove()
 
         if $.api.action == 'show'
-            groupId          = $('table#instances-table').data('id')
-            $instances       = $('tbody#instances')
+            notifierId       = $('table#events-table').data('notifier-id')
+            $events          = $('tbody#events')
 
-            instanceIds = (instance.attributes['data-id'].value for instance in $instances.find('tr.instance'))
+            dispatcher = new EventSource("/streams/watcher_updates?notifier_id=#{notifierId}")
 
-            dispatcher = new EventSource("/streams/instances_status?group_id=#{groupId}")
-            dispatcher.addEventListener 'instanceUpdate', (event) ->
+            dispatcher.addEventListener 'fileCreated', (event) ->
                 eventData  = $.parseJSON(event.data)
-                instanceId = eventData.id
-                status     = eventData.status
 
-                $instances.find("tr[data-id='#{instanceId}'] td.status").html status
+                $events.html(eventData.events)
 
-            dispatcher.addEventListener 'instancesUpdated', (event) ->
-                dispatcher.close()
+
+            # dispatcher.addEventListener 'instancesUpdated', (event) ->
+                # dispatcher.close()
 
