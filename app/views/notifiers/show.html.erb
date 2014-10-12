@@ -1,1 +1,14 @@
 <%= page_header t('.header', notifier: @notifier.path) %>
+
+<table class='table table-condensed table-striped table-hover'>
+  <thead>
+    <th> <%= t '.event.file_name' %> </th>
+    <th> <%= t '.event.file_mtime' %> </th>
+    <th> <%= t '.event.file_path' %> </th>
+    <th> <%= t '.event.file_ownership' %> </th>
+  </thead>
+
+  <tbody>
+    <%= render @notifier.events %>
+  </tbody>
+</table>

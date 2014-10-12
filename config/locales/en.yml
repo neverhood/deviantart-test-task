@@ -37,6 +37,11 @@ en:
           pattern: 'Match Pattern'
           events:
             count: 'Events Count'
+        event: &event_attributes
+          file_name: 'File'
+          file_mtime: 'mtime'
+          file_path:  'Path'
+          file_ownership:  'Ownership'
     errors:
       models:
         notifier:
@@ -56,4 +61,6 @@ en:
       header: 'Edit notifier: %{notifier}'
     show:
       header: 'Notifier: %{notifier}'
+      event:
+        <<: *event_attributes
 

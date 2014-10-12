@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20141012091334) do
   create_table "events", force: true do |t|
     t.integer  "notifier_id"
     t.string   "file_name"
-    t.time     "file_ctime"
+    t.datetime "file_mtime"
     t.string   "absolute_file_path"
     t.string   "ownership"
     t.datetime "created_at"

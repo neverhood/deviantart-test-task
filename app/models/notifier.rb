@@ -39,7 +39,9 @@ class Notifier < ActiveRecord::Base
         stat = File.stat(file)
 
         if Notifier.where(id: id).any?
-          events.create(file_name: event.name, absolute_file_path: File.join(path, event.name), file_ctime: file.ctime, ownership: "uid: #{stat.uid}, gid: #{stat.gid}")
+          if event.name =~ Regexp.new(pattern)
+            events.create(file_name: event.name, absolute_file_path: file.path, file_mtime: file.mtime, ownership: "uid: #{stat.uid}, gid: #{stat.gid}")
+          end
         else
           @watcher.stop
           throw :done

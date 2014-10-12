@@ -19,6 +19,7 @@
 //= require api/api
 //
 //= require notifiers
+//= require events
 //= require_self
 //
 
